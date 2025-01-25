@@ -13,16 +13,16 @@
 #ifndef SCALAR_CONVERTER_CLASS_HPP
 # define SCALAR_CONVERTER_CLASS_HPP
 
+# define RED "\033[1;38;5;9m"
+# define RESET "\033[0m"
+
 # include <iostream>
 # include <string>
-
-typedef enum e_inputType
-{
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE
-} t_inputType;
+# include <climits>
+# include <limits>
+# include <sstream>
+# include <cctype>
+# include <cstdlib>
 
 class ScalarConverter
 {
@@ -33,9 +33,14 @@ class ScalarConverter
 
 		ScalarConverter	&operator=( ScalarConverter const &src );
 
-		static bool	_pseudosHandler( std::string const &str );
-		static bool	_charHandler( std::string const &str );
-		static bool	_intHandler( std::string const &str );
+		static bool	_pseudosHandler( std::string str );
+		static bool	_charHandler( std::string str );
+		static bool	_numHandler ( std::string str );
+		static bool	_intHandler( std::string str );
+		static bool	_floattHandler( std::string str );
+		static bool	_doubleHandler( std::string str );
+
+		static void	_printChar( int n );
 	public:
 
 		static void	convert( std::string const &str );
