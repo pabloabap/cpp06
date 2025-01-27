@@ -22,11 +22,11 @@ int	main( int argc, char **argv )
 	else
 	{
 		std::cout << "Usage: ./conversor <char|int|float|double>\n"
-			<< "char example: 'a', 'c', ...\n"
-			<< "int example: 0, -42, 42 ...\n"
-			<< "float example: 0.0f, -4.2f, 4.2f ..."
+			<< " - char example: \"'a'\", \"'c'\" ...\n"
+			<< " - int example: 0, -42, 42 ...\n"
+			<< " - float example: 0.0f, -4.2f, 4.2f ..."
 			<< " Also accepted -inff, +inff and nanf\n"
-			<< "double example: 0.0, -4.2, 4.2 ..." 
+			<< " - double example: 0.0, -4.2, 4.2 ..." 
 			<< " Also accepted -inf, +inf and nan"
 			<< std::endl;
 	}

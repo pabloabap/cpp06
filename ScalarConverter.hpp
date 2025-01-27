@@ -19,10 +19,14 @@
 # include <iostream>
 # include <string>
 # include <climits>
+# include <cfloat>
 # include <limits>
 # include <sstream>
 # include <cctype>
 # include <cstdlib>
+# include <cerrno>
+
+# include "ft_utils.hpp"
 
 class ScalarConverter
 {
@@ -35,15 +39,17 @@ class ScalarConverter
 
 		static bool	_pseudosHandler( std::string str );
 		static bool	_charHandler( std::string str );
-		static bool	_numHandler ( std::string str );
 		static bool	_intHandler( std::string str );
-		static bool	_floattHandler( std::string str );
-		static bool	_doubleHandler( std::string str );
+		static bool	_realNumHandler( std::string str );
+		static bool	_floatHandler( std::string str, double sign );
+		static bool	_doubleHandler( std::string str, double sign );
 
 		static void	_printChar( int n );
+		static void	_printInt( double n );
+		static void	_printFloat( double n );
 	public:
 
-		static void	convert( std::string const &str );
+		static void	convert( std::string str );
 };
 
 #endif

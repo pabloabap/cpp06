@@ -13,11 +13,11 @@
 NAME		= conversor
 
 CPP		= c++
-CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98 -Wconversion -Wno-unused
+CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98 -Wconversion
 
-HEADERS		= ScalarConverter.hpp
+HEADERS		= ScalarConverter.hpp ft_utils.hpp
 
-SRC		= main.cpp ScalarConverter.cpp
+SRC		= main.cpp ScalarConverter.cpp ft_utils.cpp
 
 
 OBJ		= $(SRC:.cpp=.o)
@@ -27,7 +27,7 @@ all:	$(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPP_FLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp $(HEADERS)
+%.o: %.cpp $(HEADERS) Makefile
 	$(CPP) $(CPP_FLAGS) -c $< -o $@
 
 clean:
