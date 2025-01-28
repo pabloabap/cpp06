@@ -75,21 +75,21 @@ void	identify( Base &p )
 	
 	try
 	{
-		dynamic_cast<A &>(p);
+		(void )dynamic_cast<A &>(p);
 		classType = 'A';
 	}
 	catch( std::exception &bc)
 	{
 		try
 		{
-			dynamic_cast<B &>(p);
+			(void )dynamic_cast<B &>(p);
 			classType = 'B';
 		}
 		catch ( std::exception &bc )
 		{
 			try
 			{
-				dynamic_cast<C &>(p);
+				(void)dynamic_cast<C &>(p);
 				classType = 'C';
 			}
 			catch (std::exception &bc )

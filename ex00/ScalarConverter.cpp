@@ -6,7 +6,7 @@
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:23:57 by pabad-ap          #+#    #+#             */
-/*   Updated: 2025/01/24 20:26:33 by pabad-ap         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:49:02 by pabad-ap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,7 +219,11 @@ void	ScalarConverter::_printChar( int n )
 	else if ( !isprint( n ) )
 		char_msg = "Non displayable";
 	else
-		char_msg = static_cast<char>( n );
+	{
+		char_msg = "'";
+		char_msg += static_cast<char>( n );
+		char_msg += "'";
+	}
 	std::cout << "char: " << char_msg << std::endl;
 }
 
