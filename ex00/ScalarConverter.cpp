@@ -6,7 +6,7 @@
 /*   By: pabad-ap <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:23:57 by pabad-ap          #+#    #+#             */
-/*   Updated: 2025/01/28 17:49:02 by pabad-ap         ###   ########.fr       */
+/*   Updated: 2025/01/28 18:02:38 by pabad-ap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,9 +111,10 @@ bool	ScalarConverter::_intHandler( std::string str )
 		if ( !isdigit( *it ) )
 			return ( false );	
 	}	
-	if ( str.length() >= strIntMax.str().length() \
+	if ( str.length() > strIntMax.str().length() \
+		|| (str.length() == strIntMax.str().length() \
 		&& ( ( 1 == sign && 0 < str.compare(strIntMax.str()) ) \
-			|| ( -1 == sign && 0 < str.compare(strIntMin.str().substr(1) ))))
+			|| ( -1 == sign && 0 < str.compare(strIntMin.str().substr(1) )))))
 	{
 		std::cout << RED << "Error: INT overflow" << RESET << std::endl;
 	}
